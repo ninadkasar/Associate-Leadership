@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Log in</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <div class="centre">
+            <h1>Log in form</h1>
+            <form action="#">
+                <div class="txt_field">
+                    <input type="text" id="name" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="password" id="password" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+
+                <div class="pass">
+                    <b><a href="forget_password.php?step1=1">
+                    Forgot password?</a></b>
+                </div>
+
+                <div class="pass">
+                    <b><a href="#">
+                    Forgot username?</a></b>
+                </div>
+                <input type="submit" onclick="savedata()" value="Login">
+                <div class="signup_link">
+                    Not a member?
+                    <a href="signup.html">Signup</a>
+                </div>
+            </form>
+        </div>
+
+    
+    </body>
+
+    <script>
+        function savedata(){
+        let name, pass;
+
+        name= document.getElementById("name").value;
+        pass= document.getElementById("password").value;
+
+        let user_records= new Array();
+
+        user_records= JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+        
+        if(user_records.some((v)=>{return v.name==name && v.password==pass}))
+        {
+            alert("Login pass");    
+            let current_user=user_records.filter((v)=>{return v.name==name && v.password==pass})[0]
+            localStorage.setItem('name',current_user.name);
+            window.location.href="profile.html"
+        }
+
+            
+            
+        
+        else{
+            alert("login failed");
+        }
+    
+    
+    
+    }
+    </script>
+        
+</html>
