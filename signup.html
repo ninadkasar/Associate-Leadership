@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>Sign up</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style_signup.css">
+        
+    </head>
+
+    <body>
+
+        
+        <div class="centre">
+            <h1>Signup form</h1>
+            <form action="insert.php" method="post">
+                <div class="txt_field">
+                    <input type="text" name="username" id="username" required>
+                    <span></span>
+                    <label>Username</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="email" name= "email" id="email" required>
+                    <span></span>
+                    <label>Email</label>
+                </div>
+
+                <div class="txt_field">
+                    <input type="password" name="password" id="pwd" required>
+                    <span></span>
+                    <label>Password</label>
+                </div>
+
+                <!--<div class="txt_field_remember">
+                    <input type="checkbox" onclick="setcookie()">
+                    <span></span>
+                    <label>Remember me</label>
+                </div>-->
+
+                <div class="pass"></div>
+                <input type="submit" onclick="savedata()" value="Signup" id="save_btn">
+                <div class="login_link">
+                    Already a member?
+                    <a href="log_in.html">Login</a>
+                </div>
+
+                
+            </form>
+        </div>
+    </body>
+    <!--<script>
+        function savedata(){
+        let username,email,pwd;
+        username=document.getElementById("username").value;
+        email=document.getElementById("email").value;
+        pwd=document.getElementById("pwd").value;
+
+        localStorage.setItem("username",username);
+        localStorage.setItem("email",email);
+        localStorage.setItem("password",pwd);
+
+
+
+        
+        }
+
+    </script>-->
+</html>
